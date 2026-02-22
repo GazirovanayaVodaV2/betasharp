@@ -7,7 +7,6 @@ namespace BetaSharp.Entities;
 
 public class EntityTNTPrimed : Entity
 {
-    public static readonly new java.lang.Class Class = ikvm.runtime.Util.getClassFromTypeHandle(typeof(EntityTNTPrimed).TypeHandle);
     public int fuse;
     public float power = 4.0f;
 
