@@ -1,0 +1,50 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch: Launcher (Recommended)",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}/BetaSharp.Launcher/BetaSharp.Launcher.csproj",
+            "preLaunchTask": "Build All (Release)",
+            "args": [],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Launch: Server",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}/BetaSharp.Server/BetaSharp.Server.csproj",
+            "preLaunchTask": "Build All (Release)",
+            "args": [],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Launch: Client (Direct)",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}/BetaSharp.Client/BetaSharp.Client.csproj",
+            "preLaunchTask": "Build All (Release)",
+            "args": [],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Hot Reload: Launcher",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}/BetaSharp.Launcher/BetaSharp.Launcher.csproj",
+            "actionOnExternalChanges": "hotReload", 
+            "preLaunchTask": "Build All (Release)",
+            "console": "integratedTerminal"
+        }
+    ],
+    "compounds": [
+        {
+            "name": "Server + Launcher",
+            "configurations": [
+                "Launch: Server",
+                "Launch: Launcher (Recommended)"
+            ]
+        }
+    ]
+}

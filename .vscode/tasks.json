@@ -1,0 +1,59 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build All (Release)",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "type": "shell",
+            "command": "dotnet build --configuration Release",
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "Build Launcher",
+            "type": "shell",
+            "command": "dotnet build BetaSharp.Launcher --configuration Release",
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "Build Client",
+            "type": "shell",
+            "command": "dotnet build BetaSharp.Client --configuration Release",
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "Build Server",
+            "type": "shell",
+            "command": "dotnet build BetaSharp.Server --configuration Release",
+            "problemMatcher": "$msCompile"
+        },
+
+        {
+            "label": "Run Launcher",
+            "type": "shell",
+            "command": "dotnet run --project BetaSharp.Launcher --configuration Release",
+            "dependsOn": "Build All",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "Run Server",
+            "type": "shell",
+            "command": "dotnet run --project BetaSharp.Server --configuration Release",
+            "dependsOn": "Build All",
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "Watch Launcher",
+            "type": "shell",
+            "command": "dotnet watch run --project BetaSharp.Launcher --configuration Debug",
+            "problemMatcher": "$msCompile",
+            "isBackground": true
+        }
+    ]
+}
